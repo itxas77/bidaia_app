@@ -1,1 +1,1 @@
-# bidaia_app
+# BidAI_app
