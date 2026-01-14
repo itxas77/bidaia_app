@@ -1,8 +1,14 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import os
 import psycopg2
 from dotenv import load_dotenv
 from llm import generate_itinerary
+import sys
+app = os.path.dirname(os.path.abspath(__file__)) 
+sys.path.append(app)
+import llm
+
+
 
 load_dotenv()
 
@@ -11,9 +17,13 @@ app.config["DEBUG"] = True
 
 DATABASE_URL = os.getenv("DATABASE_URL").strip()
 
+#@app.route("/", methods=["GET"])
+#def home():
+    #return jsonify({"message": "BidaIA_app API funcionando correctamente 🚀"})
+
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify({"message": "BidaIA_app API funcionando correctamente 🚀"})
+    return render_template("front.html")
 
 
 @app.route("/itinerary", methods=["POST"])
