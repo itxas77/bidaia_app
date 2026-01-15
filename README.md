@@ -174,5 +174,3 @@ Respuesta (JSON):
 
 Itxaso Campos Molina
 Email: itxas.77@gmail.com
-
-Tel: (+34) 652 710 083## BidAI_app
